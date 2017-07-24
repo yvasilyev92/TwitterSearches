@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.deitel.twittersearches.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/queryTextInputLayout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:hint="@string/query_prompt"
+            android:singleLine="true"
+            android:maxLines="1"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tagTextInputLayout"
+        android:layout_below="@+id/queryTextInputLayout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/tag_prompt"
+            android:imeOptions="actionDone"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/tagTextInputLayout"
+        android:background="@color/colorTaggedSearches">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tagged_searches"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/recyclerView"
+            android:layout_weight="1"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp">
+        </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
